@@ -8,9 +8,10 @@ Game.Load.prototype = {
 	/* Función que carga las imágenes necesarias para el juego. */
 	preload : function() {
 		this.load.image('background', 'assets/pantallaInicial.png');
-		this.load.spritesheet('mapa', 'assets/Mapa.png', 300, 80);
-		this.load.spritesheet('creditos', 'assets/Creditos.png', 300, 80);
-		this.load.spritesheet('instrucciones', 'assets/Instrucciones.png', 300, 80);
+		this.load.spritesheet('botonMapa', 'assets/boton_mapa.png', 300, 80);
+		this.load.spritesheet('botonCreditos', 'assets/boton_creditos.png', 300, 80);
+		this.load.spritesheet('botonInstrucciones', 'assets/boton_instrucciones.png', 300, 80);
+		this.load.image('Mapa' , 'assets/mapa.png')
 		//botones de los niveles del mapa
 		this.load.image('boton1','assets/boton1.png');
 		this.load.image('boton2','assets/boton2.png');

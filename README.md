@@ -8,5 +8,6 @@ estudiantes de bachillerato.
 
 ####Yoshua Ian Alfaro Mendoza
 ####David Alejandro Nieto Andrade
+	davidalexito23@gmail.com
 ####Manuel Soto Romero
     manu@ciencias.unam.mx

@@ -12,6 +12,8 @@ Game.Load.prototype = {
 		this.load.spritesheet('botonCreditos', 'assets/boton_creditos.png', 300, 80);
 		this.load.spritesheet('botonInstrucciones', 'assets/boton_instrucciones.png', 300, 80);
 		this.load.image('Mapa' , 'assets/mapa.png')
+		this.load.image('fondoInstrucciones' , 'assets/instrucciones.jpg')
+		this.load.image('fondoCreditos' , 'assets/creditos.jpg')
 		//botones de los niveles del mapa
 		this.load.image('boton1','assets/boton1.png');
 		this.load.image('boton2','assets/boton2.png');
@@ -29,6 +31,10 @@ Game.Load.prototype = {
 		this.load.image('boton14','assets/boton14.png');
 		this.load.image('boton15','assets/boton15.png');
 		this.load.image('boton16','assets/boton16.png');
+		this.load.image('fondoLectura','assets/fondoLectura.png');
+		this.load.image('fondoJuego','assets/fondoJuego.png');
+		this.load.image('jugar', 'assets/boton_jugar.png')
+
 	},
 
 	/* Función que carga el juego. Para ello ubica el fondo de la pantalla 

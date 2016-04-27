@@ -33,14 +33,24 @@ Game.Load.prototype = {
 		this.load.image('boton16','assets/boton16.png');
 		this.load.image('fondoLectura','assets/fondoLectura.png');
 		this.load.image('fondoJuego','assets/fondoJuego.png');
-		this.load.image('jugar', 'assets/boton_jugar.png')
+		this.load.image('jugar', 'assets/boton_jugar.png');
+		this.load.video('videointro', 'assets/leetris.mp4');
+	},
 
+	startgame : function(){
+		this.game.state.start('MainMenu');
 	},
 
 	/* Función que carga el juego. Para ello ubica el fondo de la pantalla 
 	   inicial y luego llama al código correspondiente. */
 	create : function() {
 		this.game.add.tileSprite(0, 0, 1200, 4523, 'background');
-		this.game.state.start('MainMenu');
-	}
+		var video = this.game.add.video('videointro');
+		var sprite = video.addToWorld(this.game.world.centerX, this.game.world.centerY, 0.5, 0.5, 2, 2);
+		video.play(false);
+		video.onComplete.add(this.startgame, this);
+		
+	}, 
+
+	
 };

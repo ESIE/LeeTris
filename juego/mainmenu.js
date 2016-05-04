@@ -137,14 +137,18 @@ Game.PantallaInstrucciones.prototype = {
 
 	create : function(){
 		
-		var instrucciones = this.game.add.sprite(0, 0 , 'fondoInstrucciones');
 		this.game.world.setBounds(0, 0, 1200, 4523);
-	},
+		this.pantalla1 = this.add.sprite(0, 0, 'instruccion1');
+		this.home = this.add.button(600, 600,'botonhome',this.clickHome,this,1,0,2);
+		
+
+
+			},
 
 	clickHome : function() {
 		
 		score = 0;
-		this.gamevar.state.start('Load');
+		this.game.state.start('MainMenu');
 	
         
 	},

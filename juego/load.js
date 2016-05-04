@@ -11,9 +11,17 @@ Game.Load.prototype = {
 		this.load.spritesheet('botonMapa', 'assets/boton_mapa.png', 300, 80);
 		this.load.spritesheet('botonCreditos', 'assets/boton_creditos.png', 300, 80);
 		this.load.spritesheet('botonInstrucciones', 'assets/boton_instrucciones.png', 300, 80);
+		this.load.spritesheet('botonhome', 'assets/siguiente.png', 300, 80);
 		this.load.image('Mapa' , 'assets/mapa.png')
-		this.load.image('fondoInstrucciones' , 'assets/instrucciones.jpg')
-		this.load.image('fondoCreditos' , 'assets/creditos.jpg')
+		this.load.image('instruccion1' , 'assets/Instruccion1.png');
+		this.load.image('instruccion2' , 'assets/Instruccion2.png');
+		this.load.image('instruccion3' , 'assets/Instruccion3.png');
+		this.load.image('instruccion4' , 'assets/Instruccion4.png');
+		this.load.image('instruccion5' , 'assets/Instruccion5.png');
+		this.load.image('instruccion6' , 'assets/Instruccion6.png');
+		this.load.image('instruccion7' , 'assets/Instruccion7.png');
+		this.load.image('instruccion8' , 'assets/Instruccion8.png');
+		this.load.image('fondoCreditos' , 'assets/creditos.jpg');
 		//botones de los niveles del mapa
 		this.load.image('boton1','assets/boton1.png');
 		this.load.image('boton2','assets/boton2.png');

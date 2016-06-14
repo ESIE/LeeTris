@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+    p {
+        font-family: arial;
+        text-align: justify;
+        width: 600px;
+    }
+</style>
+</head>
+
+<body>
+
+<p id="demo"></p>
+
+<script>
+var xhttp;
+xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        myFunction(xhttp);
+    }
+};
+xhttp.open("GET", "lectura1.xml", true);
+xhttp.send();
+
+String.prototype.replaceAt=function(index, character) {
+    return this.substr(0, index) + character + this.substr(index+character.length);
+}
+
+function myFunction(xml) {
+    var x, i, txt, xmlDoc;
+    xmlDoc = xml.responseXML;
+    txt = "";
+    // obtenemos el título de la lectura.
+    x = xmlDoc.getElementsByTagName("titulo");
+    txt += "<h1>" + x[0].childNodes[0].nodeValue +"</h1>";
+
+    // obtenemos el texto de la lectura.
+    x = xmlDoc.getElementsByTagName("texto");
+    for (i = 0; i < x.length; i++) {
+        txt += x[i].childNodes[0].nodeValue + "<br>";
+    }
+    txt = txt.replace(/\n/g, "<br>");
+
+    // obtenemos alguna pregunta.
+    x = xmlDoc.getElementsByTagName("pregunta");
+    txt += "<h3>Preguntas</h3>";
+    txt += x[0].childNodes[0].nodeValue + "<br>";
+
+    // obtenemos las respuestas a esa pregunta
+    x = xmlDoc.getElementsByTagName("respuestai");
+    y = xmlDoc.getElementsByTagName("respuestac");
+    txt += "<h4>Opciones</h4>";
+    txt += "a) " + x[0].childNodes[0].nodeValue + "<br>";
+    txt += "<b>b) " + y[0].childNodes[0].nodeValue + "</b><br>";
+    txt += "c) " + x[0].childNodes[0].nodeValue + "<br>";
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+</body>
+</html>
+

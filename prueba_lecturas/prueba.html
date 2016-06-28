@@ -39,13 +39,15 @@ function myFunction(xml) {
 
     // obtenemos el texto de la lectura.
     x = xmlDoc.getElementsByTagName("texto");
+    txt += "<p text-align=\"justify\">";
     for (i = 0; i < x.length; i++) {
         txt += x[i].childNodes[0].nodeValue + "<br>";
     }
     txt = txt.replace(/\n/g, "<br>");
+    txt += "</p>";
 
     // obtenemos alguna pregunta.
-    x = xmlDoc.getElementsByTagName("pregunta");
+    x = xmlDoc.getElementsByTagName("mensaje");
     txt += "<h3>Preguntas</h3>";
     txt += x[0].childNodes[0].nodeValue + "<br>";
 

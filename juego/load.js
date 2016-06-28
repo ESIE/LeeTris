@@ -11,7 +11,8 @@ Game.Load.prototype = {
 		this.load.spritesheet('botonMapa', 'assets/boton_mapa.png', 300, 80);
 		this.load.spritesheet('botonCreditos', 'assets/boton_creditos.png', 300, 80);
 		this.load.spritesheet('botonInstrucciones', 'assets/boton_instrucciones.png', 300, 80);
-		this.load.spritesheet('botonhome', 'assets/siguiente.png', 300, 80);
+		this.load.spritesheet('botonsiguiente', 'assets/siguiente.png', 300, 80);
+		this.load.spritesheet('botonhome', 'assets/boton_home.png', 300, 80);
 		this.load.image('Mapa' , 'assets/mapa.png')
 		this.load.image('instruccion1' , 'assets/Instruccion1.png');
 		this.load.image('instruccion2' , 'assets/Instruccion2.png');
@@ -43,6 +44,8 @@ Game.Load.prototype = {
 		this.load.image('fondoJuego','assets/fondoJuego.png');
 		this.load.image('jugar', 'assets/boton_jugar.png');
 		this.load.video('videointro', 'assets/leetris.mp4');
+
+		this.load.spritesheet('blocks','assets/blocks.png',30,30);
 	},
 
 	startgame : function(){
@@ -53,11 +56,14 @@ Game.Load.prototype = {
 	   inicial y luego llama al código correspondiente. */
 	create : function() {
 		this.game.add.tileSprite(0, 0, 1200, 4523, 'background');
-		var video = this.game.add.video('videointro');
-		var sprite = video.addToWorld(this.game.world.centerX, this.game.world.centerY, 0.5, 0.5, 2, 2);
-		video.play(false);
-		video.onComplete.add(this.startgame, this);
-		
+		/*
+		*Quité el video para poder hacer pruebas sin tener que verlo cada que carga el juego, tambien 
+		*lo de start mainmenu es temporal. 
+		*var video = this.game.add.video('videointro');
+		*var sprite = video.addToWorld(this.game.world.centerX, this.game.world.centerY, 0.5, 0.5, 2, 2);
+		*video.play(false);
+		*video.onComplete.add(this.startgame, this);*/
+		 this.game.state.start('MainMenu');
 	}, 
 
 	

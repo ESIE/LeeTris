@@ -1,26 +1,31 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<title>LeeTris - DYM</title>
-		<script src="phaser.min.js"></script>
-		<script src="load.js"></script>
-		<script src="mainmenu.js"></script>
-	</head>
-	<body style:"margin:0px auto; ">
-		<div id="gameContainer" style:="margin:0px auto;"></div>
-		<script type="text/javascript">
-			window.onload = function() {
-				var gamevar = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS,'gameContainer');
-				gamevar.state.add('Load', Game.Load);
-				gamevar.state.add('MainMenu', Game.MainMenu);
-				gamevar.state.add('Mapa',Game.MapScreen);
-				gamevar.state.add('Instrucciones',Game.PantallaInstrucciones);
-				gamevar.state.add('Creditos',Game.PantallaCreditos);
-				gamevar.state.add('PrimerNivel', Game.PrimerNivel);
-				gamevar.state.add('Juego', Game.JuegoTemporal);
-				gamevar.state.start('Load');
-			};
-		</script>
-	</body>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>LeeTris - DYM</title>
+    <script src="phaser.min.js"></script>
+    <script src="load.js"></script>
+    <script src="Game.js"></script>
+    <script src="Block.js"></script>
+    <script src="mainmenu.js"></script>
+</head>
+
+<body style: "margin:0px auto; ">
+    <div id="gameContainer" style:="margin:0px auto;"></div>
+    <script type="text/javascript">
+    window.onload = function() {
+        var gamevar = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, 'gameContainer');
+        gamevar.state.add('Load', Game.Load);
+        gamevar.state.add('MainMenu', Game.MainMenu);
+        gamevar.state.add('Juego', Game.PlayGame);
+        gamevar.state.add('Mapa', Game.MapScreen);
+        gamevar.state.add('Instrucciones', Game.PantallaInstrucciones);
+        gamevar.state.add('Creditos', Game.PantallaCreditos);
+        gamevar.state.add('PrimerNivel', Game.PrimerNivel);
+        gamevar.state.start('Load');
+    };
+    </script>
+</body>
+
 </html>
